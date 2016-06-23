@@ -57,6 +57,8 @@ void hashtable_free(struct HashTable** ptr)
     {
         struct HashTable* table = *ptr;
         free(table->buckets);
+        free(*ptr);
+        *ptr = 0x0;
     }
 }
 
